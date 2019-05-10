@@ -95,8 +95,9 @@ public class School {
     }
 
     private void printTeacherAndStudents(Course course) {
+        final String teacher = course.getTeacher() == null ? "N\\A" : course.getTeacher().getName();
         System.out.printf("Course: %s, Teacher: %s, Students: %s\n",
-                course.getName(), course.getTeacher().getName(), course.getStudents());
+                course.getName(), teacher, course.getStudents());
     }
 
     /**
