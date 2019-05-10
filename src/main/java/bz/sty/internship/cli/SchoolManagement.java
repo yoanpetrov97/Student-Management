@@ -16,8 +16,9 @@ public class SchoolManagement {
     public static void main(String[] args) {
         printAvailableOptions();
 
-        String currentLine;
-        while (!"q".equalsIgnoreCase(currentLine = scanner.nextLine()) && currentLine != null) {
+        String currentLine = scanner.nextLine();
+        
+        while (!"q".equalsIgnoreCase(currentLine)) {
             switch (currentLine) {
                 case "0":
                     addNewCourse();
@@ -52,7 +53,10 @@ public class SchoolManagement {
                 default:
                     System.out.println("Wrong command! Enter an integer number from 0 to 9 or q to quit.");
             }
+
             printAvailableOptions();
+
+            currentLine = scanner.nextLine();
         }
     }
 
@@ -98,7 +102,7 @@ public class SchoolManagement {
             final int age = Integer.parseInt(scanner.nextLine());
 
             school.addStudent(new Student(name, age));
-        } catch (Exception e) {
+        } catch (NumberFormatException e) {
             System.out.println(WRONG_FORMAT_ERROR_MESSAGE);
         }
     }
@@ -106,101 +110,86 @@ public class SchoolManagement {
     private static void addNewTeacher() {
         System.out.println("Enter the name of the teacher you want to add:");
 
-        try {
-            final String name = scanner.nextLine();
+        final String name = scanner.nextLine();
 
-            getTeachersDegree(name);
-        } catch (Exception e) {
-            System.out.println(WRONG_FORMAT_ERROR_MESSAGE);
-        }
+        getTeachersDegree(name);
     }
 
     private static void getTeachersDegree(String name) {
-        try {
-            System.out.println("Enter the teacher's degree:\n" +
-                    "1 - MSc\n" +
-                    "2 - BSc\n" +
-                    "3 - PhD");
 
-            final String degree = scanner.nextLine();
+        System.out.println("Enter the teacher's degree:\n" +
+                "1 - MSc\n" +
+                "2 - BSc\n" +
+                "3 - PhD");
 
-            Degree teacherDegree = null;
+        final String degree = scanner.nextLine();
 
-            switch (degree) {
-                case "1":
-                case "MSc":
-                    teacherDegree = Degree.MSc;
-                    break;
-                case "2":
-                case "BSc":
-                    teacherDegree = Degree.BSc;
-                    break;
-                case "3":
-                case "PhD":
-                    teacherDegree = Degree.PhD;
+        Degree teacherDegree = null;
 
-            }
+        switch (degree) {
+            case "1":
+            case "MSc":
+                teacherDegree = Degree.MSc;
+                break;
+            case "2":
+            case "BSc":
+                teacherDegree = Degree.BSc;
+                break;
+            case "3":
+            case "PhD":
+                teacherDegree = Degree.PhD;
+                break;
+            default:
+                System.out.println(WRONG_FORMAT_ERROR_MESSAGE);
+                System.out.println("Enter an integer number from {1, 2, 3} or {MSc, BSc, PhD}");
 
-            school.addTeacher(new Teacher(name, teacherDegree));
-
-        } catch (Exception e) {
-            System.out.println("Usage: <degree>\n" +
-                    "Possible degrees are:\n" +
-                    "\t1 - MSc\n" +
-                    "\t2 - BSc\n" +
-                    "\t3 - PhD");
         }
+
+        school.addTeacher(new Teacher(name, teacherDegree));
+
     }
 
     private static void addTeacherToCourse() {
         System.out.println("Enter the teacher's name:");
 
-        try {
-            final String teacherName = scanner.nextLine();
+        final String teacherName = scanner.nextLine();
 
-            System.out.println("Enter the name of the course:");
+        System.out.println("Enter the name of the course:");
 
-            final String courseName = scanner.nextLine();
+        final String courseName = scanner.nextLine();
 
-            if (school.getTeachers().get(teacherName) == null) {
-                System.out.printf("The teacher %s isn't added to the school.\n", teacherName);
-            }
+        if (school.getTeachers().get(teacherName) == null) {
+            System.out.printf("The teacher %s isn't added to the school.\n", teacherName);
+        }
 
-            if (school.getCourses().get(courseName) == null) {
-                System.out.printf("The course %s isn't added to the school.\n", courseName);
-            }
+        if (school.getCourses().get(courseName) == null) {
+            System.out.printf("The course %s isn't added to the school.\n", courseName);
+        }
 
-            if (school.getTeachers().get(teacherName) != null && school.getCourses().get(courseName) != null) {
-                school.addTeacherToCourse(school.getTeachers().get(teacherName), school.getCourses().get(courseName));
-            }
-        } catch (Exception e) {
-            System.out.println(WRONG_FORMAT_ERROR_MESSAGE);
+        if (school.getTeachers().get(teacherName) != null && school.getCourses().get(courseName) != null) {
+            school.addTeacherToCourse(school.getTeachers().get(teacherName), school.getCourses().get(courseName));
         }
     }
 
     private static void addStudentToCourse() {
         System.out.println("Enter the student's name:");
 
-        try {
-            final String studentName = scanner.nextLine();
+        final String studentName = scanner.nextLine();
 
-            System.out.println("Enter the name of the course:");
+        System.out.println("Enter the name of the course:");
 
-            final String courseName = scanner.nextLine();
+        final String courseName = scanner.nextLine();
 
-            if (school.getStudents().get(studentName) == null) {
-                System.out.printf("The student %s isn't added to the school.\n", studentName);
-            }
+        if (school.getStudents().get(studentName) == null) {
+            System.out.printf("The student %s isn't added to the school.\n", studentName);
+        }
 
-            if (school.getCourses().get(courseName) == null) {
-                System.out.printf("The course %s isn't added to the school.\n", courseName);
-            }
+        if (school.getCourses().get(courseName) == null) {
+            System.out.printf("The course %s isn't added to the school.\n", courseName);
+        }
 
-            if (school.getStudents().get(studentName) != null && school.getCourses().get(courseName) != null) {
-                school.addStudentToCourse(school.getStudents().get(studentName), school.getCourses().get(courseName));
-            }
-        } catch (Exception e) {
-            System.out.println(WRONG_FORMAT_ERROR_MESSAGE);
+        if (school.getStudents().get(studentName) != null && school.getCourses().get(courseName) != null) {
+            school.addStudentToCourse(school.getStudents().get(studentName), school.getCourses().get(courseName));
         }
     }
 
@@ -222,7 +211,7 @@ public class SchoolManagement {
             school.addGradeForStudentInCourse(grade, school.getStudents().get(studentName),
                     school.getCourses().get(courseName));
 
-        } catch (Exception e) {
+        } catch (NumberFormatException e) {
             System.out.println(WRONG_FORMAT_ERROR_MESSAGE);
         }
     }
@@ -230,24 +219,17 @@ public class SchoolManagement {
     private static void showAverageGradeForAllStudentsInCourse() {
         System.out.println("Enter the name of the course:");
 
-        try {
-            final String courseName = scanner.nextLine();
+        final String courseName = scanner.nextLine();
 
-            school.showAverageGradeForAllStudentsInCourse(school.getCourses().get(courseName));
-        } catch (Exception e) {
-            System.out.println("Usage: <course_name>");
-        }
+        school.showAverageGradeForAllStudentsInCourse(school.getCourses().get(courseName));
     }
 
     private static void showAverageGradeForAllCourses() {
         System.out.println("Enter the student's name:");
 
-        try {
-            final String studentName = scanner.nextLine();
+        final String studentName = scanner.nextLine();
 
-            school.showAverageGradeForAllCourses(school.getStudents().get(studentName));
-        } catch (Exception e) {
-            System.out.println("Usage: <student_name>");
-        }
+        school.showAverageGradeForAllCourses(school.getStudents().get(studentName));
+
     }
 }
