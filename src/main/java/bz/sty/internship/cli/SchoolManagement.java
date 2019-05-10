@@ -217,11 +217,15 @@ public class SchoolManagement {
                 System.out.printf("The course %s isn't added to the school.\n", courseName);
             }
 
-            if (school.getStudents().get(studentName) != null && school.getCourses().get(courseName) != null) {
+            if (grade < 2.0 || grade > 6.0) {
+                System.out.println("The grade must be a floating point number in the interval [2.0-6.0]");
+            }
+
+            if (school.getStudents().get(studentName) != null && school.getCourses().get(courseName) != null
+                    && grade >= 2.0 && grade <= 6.0) {
                 school.addGradeForStudentInCourse(grade, school.getStudents().get(studentName),
                         school.getCourses().get(courseName));
             }
-
         } catch (NumberFormatException e) {
             System.out.println(WRONG_FORMAT_ERROR_MESSAGE);
         }
@@ -232,7 +236,11 @@ public class SchoolManagement {
 
         final String courseName = scanner.nextLine();
 
-        school.showAverageGradeForAllStudentsInCourse(school.getCourses().get(courseName));
+        if (school.getCourses().get(courseName) == null) {
+            System.out.printf("The course %s isn't added to the school.\n", courseName);
+        } else {
+            school.showAverageGradeForAllStudentsInCourse(school.getCourses().get(courseName));
+        }
     }
 
     private static void showAverageGradeForAllCourses() {
@@ -240,7 +248,10 @@ public class SchoolManagement {
 
         final String studentName = scanner.nextLine();
 
-        school.showAverageGradeForAllCourses(school.getStudents().get(studentName));
-
+        if (school.getStudents().get(studentName) == null) {
+            System.out.printf("The student %s isn't added to the school.\n", studentName);
+        } else {
+            school.showAverageGradeForAllCourses(school.getStudents().get(studentName));
+        }
     }
 }

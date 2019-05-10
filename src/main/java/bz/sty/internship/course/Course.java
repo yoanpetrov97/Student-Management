@@ -3,11 +3,7 @@ package bz.sty.internship.course;
 import bz.sty.internship.student.Student;
 import bz.sty.internship.teacher.Teacher;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Course {
@@ -96,6 +92,6 @@ public class Course {
     }
 
     public List<Double> getAllGradesOfStudent(Student student) {
-        return grades.get(student);
+        return grades.getOrDefault(student, new ArrayList<>());
     }
 }
