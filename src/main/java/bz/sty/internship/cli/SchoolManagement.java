@@ -17,7 +17,7 @@ public class SchoolManagement {
         printAvailableOptions();
 
         String currentLine = scanner.nextLine();
-        
+
         while (!"q".equalsIgnoreCase(currentLine)) {
             switch (currentLine) {
                 case "0":
@@ -208,8 +208,19 @@ public class SchoolManagement {
 
             final double grade = Integer.parseInt(scanner.nextLine());
 
-            school.addGradeForStudentInCourse(grade, school.getStudents().get(studentName),
-                    school.getCourses().get(courseName));
+
+            if (school.getStudents().get(studentName) == null) {
+                System.out.printf("The student %s isn't added to the school.\n", studentName);
+            }
+
+            if (school.getCourses().get(courseName) == null) {
+                System.out.printf("The course %s isn't added to the school.\n", courseName);
+            }
+
+            if (school.getStudents().get(studentName) != null && school.getCourses().get(courseName) != null) {
+                school.addGradeForStudentInCourse(grade, school.getStudents().get(studentName),
+                        school.getCourses().get(courseName));
+            }
 
         } catch (NumberFormatException e) {
             System.out.println(WRONG_FORMAT_ERROR_MESSAGE);
