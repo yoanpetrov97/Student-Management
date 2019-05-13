@@ -33,42 +33,56 @@ public class School {
      * Adds a new course to the school
      */
     public void addCourse(Course course) {
-        this.courses.put(course.getName(), course);
+        if (course != null) {
+            this.courses.put(course.getName(), course);
+        }
     }
 
     /**
      * Adds a new student to the school
      */
     public void addStudent(Student student) {
-        this.students.put(student.getName(), student);
+        if (student != null) {
+            this.students.put(student.getName(), student);
+        }
     }
 
     /**
      * Adds a new teacher to the school
      */
     public void addTeacher(Teacher teacher) {
-        this.teachers.put(teacher.getName(), teacher);
+        if (teacher != null) {
+            this.teachers.put(teacher.getName(), teacher);
+        }
     }
 
     /**
      * Adds a teacher to a specific course (max 1)
      */
     public void addTeacherToCourse(Teacher teacher, Course course) {
-        course.setTeacher(teacher);
+        if (teacher != null && course != null) {
+            course.setTeacher(teacher);
+        }
     }
 
     /**
      * Adds a student to a specific course
      */
     public void addStudentToCourse(Student student, Course course) {
-        course.addStudent(student);
+        if (student != null && course != null) {
+            course.addStudent(student);
+        }
     }
 
     /**
      * Adds a grade for student in a specific course. (grade 2.0-6.0)
      */
-    public void addGradeForStudentInCourse(Double grade, Student student, Course course) {
-        course.addGradeForStudent(grade, student);
+    public void addGradeForStudentInCourse(double grade, Student student, Course course) {
+        final int minPossibleGrade = 2;
+        final int maxPossibleGrade = 6;
+        if (grade >= minPossibleGrade && grade <= maxPossibleGrade && student != null && course != null) {
+            course.addGradeForStudent(grade, student);
+        }
     }
 
     /**
