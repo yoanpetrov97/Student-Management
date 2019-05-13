@@ -11,6 +11,13 @@ repositories {
     mavenCentral()
 }
 
+
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile 'org.testng:testng:6.14.3'
 }
+
+task testNG(type: Test) {
+    useTestNG()
+}
+
+test.dependsOn testNG
