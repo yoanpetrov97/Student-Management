@@ -19,5 +19,3 @@ dependencies {
 task testNG(type: Test) {
     useTestNG()
 }
-
-test.dependsOn testNG
