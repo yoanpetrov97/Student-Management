@@ -13,15 +13,15 @@ public class Course {
     private List<Student> students;
     private Map<Student, List<Double>> grades;
 
-    public Course() {
-        this.students = new ArrayList<>();
-        this.grades = new HashMap<>();
-    }
-
     public Course(String name, int totalHours) {
         this();
         this.name = name;
         this.totalHours = totalHours;
+    }
+
+    private Course() {
+        this.students = new ArrayList<>();
+        this.grades = new HashMap<>();
     }
 
     public String getName() {
@@ -65,7 +65,7 @@ public class Course {
         students.add(student);
     }
 
-    public void addGradeForStudent(Double grade, Student student) {
+    public void addGradeForStudent(double grade, Student student) {
         final int minGrade = 2;
         final int maxGrade = 6;
 

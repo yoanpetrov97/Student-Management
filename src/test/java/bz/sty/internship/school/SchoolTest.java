@@ -65,7 +65,7 @@ public class SchoolTest {
         school.addCourse(exampleCourse);
         school.addTeacherToCourse(exampleTeacher, exampleCourse);
 
-        Assert.assertEquals(school.getCourses().get("Java").getTeacher(), exampleTeacher);
+        Assert.assertEquals(school.getCourses().get(exampleCourse.getName()).getTeacher(), exampleTeacher);
     }
 
     @Test
@@ -80,7 +80,7 @@ public class SchoolTest {
         school.addTeacherToCourse(exampleTeacher, null);
         school.addTeacherToCourse(null, null);
 
-        Assert.assertNull(school.getCourses().get("Java").getTeacher());
+        Assert.assertNull(school.getCourses().get(exampleCourse.getName()).getTeacher());
     }
 
     @Test
@@ -92,7 +92,7 @@ public class SchoolTest {
         school.addCourse(exampleCourse);
         school.addStudentToCourse(exampleStudent, exampleCourse);
 
-        Assert.assertTrue(school.getCourses().get("Java").getStudents().contains(exampleStudent));
+        Assert.assertTrue(school.getCourses().get(exampleCourse.getName()).getStudents().contains(exampleStudent));
     }
 
     @Test
@@ -107,11 +107,30 @@ public class SchoolTest {
         school.addStudentToCourse(exampleStudent, null);
         school.addStudentToCourse(null, null);
 
-        Assert.assertTrue(school.getCourses().get("Java").getStudents().isEmpty());
+        Assert.assertTrue(school.getCourses().get(exampleCourse.getName()).getStudents().isEmpty());
     }
 
     @Test
     public void testAddGradeForStudentInCourse() {
+        School school = new School();
+        Student exampleStudent = new Student("Yoan", 21);
+        Course exampleCourse = new Course("Java", 60);
+        school.addStudent(exampleStudent);
+        school.addCourse(exampleCourse);
+        school.addStudentToCourse(exampleStudent, exampleCourse);
+
+        school.addGradeForStudentInCourse(6.0, exampleStudent, exampleCourse);
+        school.addGradeForStudentInCourse(2.0, exampleStudent, exampleCourse);
+        school.addGradeForStudentInCourse(3.0, exampleStudent, exampleCourse);
+        school.addGradeForStudentInCourse(4.0, exampleStudent, exampleCourse);
+
+
+        double[] exampleGrades = new double[]{6.0, 2.0, 3.0, 4.0};
+
+        for (int i = 0; i < exampleGrades.length; i++) {
+            Assert.assertEquals(school.getCourses().get(exampleCourse.getName())
+                    .getAllGradesOfStudent(exampleStudent).get(i), exampleGrades[i], 0.0001);
+        }
     }
 
     @Test
