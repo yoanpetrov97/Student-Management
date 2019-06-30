@@ -1,4 +1,4 @@
-package bz.sty.internship.teacher;
+package bg.sofia.uni.fmi.cleancode.studentmanagement.teacher;
 
 public class Teacher {
     public Teacher(String name, Degree degree) {

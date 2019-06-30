@@ -1,10 +1,10 @@
-package bz.sty.internship.cli;
+package bg.sofia.uni.fmi.cleancode.studentmanagement.cli;
 
-import bz.sty.internship.course.Course;
-import bz.sty.internship.school.School;
-import bz.sty.internship.student.Student;
-import bz.sty.internship.teacher.Degree;
-import bz.sty.internship.teacher.Teacher;
+import bg.sofia.uni.fmi.cleancode.studentmanagement.school.School;
+import bg.sofia.uni.fmi.cleancode.studentmanagement.student.Student;
+import bg.sofia.uni.fmi.cleancode.studentmanagement.course.Course;
+import bg.sofia.uni.fmi.cleancode.studentmanagement.teacher.Degree;
+import bg.sofia.uni.fmi.cleancode.studentmanagement.teacher.Teacher;
 
 import java.util.Scanner;
 

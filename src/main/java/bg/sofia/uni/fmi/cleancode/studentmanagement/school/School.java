@@ -1,8 +1,8 @@
-package bz.sty.internship.school;
+package bg.sofia.uni.fmi.cleancode.studentmanagement.school;
 
-import bz.sty.internship.course.Course;
-import bz.sty.internship.student.Student;
-import bz.sty.internship.teacher.Teacher;
+import bg.sofia.uni.fmi.cleancode.studentmanagement.course.Course;
+import bg.sofia.uni.fmi.cleancode.studentmanagement.student.Student;
+import bg.sofia.uni.fmi.cleancode.studentmanagement.teacher.Teacher;
 
 import java.util.*;
 

@@ -1,7 +1,7 @@
-package bz.sty.internship.course;
+package bg.sofia.uni.fmi.cleancode.studentmanagement.course;
 
-import bz.sty.internship.student.Student;
-import bz.sty.internship.teacher.Teacher;
+import bg.sofia.uni.fmi.cleancode.studentmanagement.student.Student;
+import bg.sofia.uni.fmi.cleancode.studentmanagement.teacher.Teacher;
 
 import java.util.*;
 import java.util.stream.Collectors;

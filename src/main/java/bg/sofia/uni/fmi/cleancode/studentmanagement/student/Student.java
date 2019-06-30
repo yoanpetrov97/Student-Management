@@ -1,4 +1,4 @@
-package bz.sty.internship.student;
+package bg.sofia.uni.fmi.cleancode.studentmanagement.student;
 
 public class Student {
     public Student(String name, int age) {
