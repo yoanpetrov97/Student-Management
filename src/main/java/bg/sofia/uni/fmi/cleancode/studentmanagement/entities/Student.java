@@ -1,4 +1,4 @@
-package bg.sofia.uni.fmi.cleancode.studentmanagement.student;
+package bg.sofia.uni.fmi.cleancode.studentmanagement.entities;
 
 public class Student {
     public Student(String name, int age) {

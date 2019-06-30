@@ -1,9 +1,10 @@
 package bg.sofia.uni.fmi.cleancode.studentmanagement.school;
 
 import bg.sofia.uni.fmi.cleancode.studentmanagement.course.Course;
-import bg.sofia.uni.fmi.cleancode.studentmanagement.student.Student;
-import bg.sofia.uni.fmi.cleancode.studentmanagement.teacher.Degree;
-import bg.sofia.uni.fmi.cleancode.studentmanagement.teacher.Teacher;
+import bg.sofia.uni.fmi.cleancode.studentmanagement.entities.School;
+import bg.sofia.uni.fmi.cleancode.studentmanagement.entities.Student;
+import bg.sofia.uni.fmi.cleancode.studentmanagement.enums.Degree;
+import bg.sofia.uni.fmi.cleancode.studentmanagement.entities.Teacher;
 import org.junit.Assert;
 import org.junit.Test;
 

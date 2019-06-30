@@ -2,10 +2,10 @@ package bg.sofia.uni.fmi.cleancode.studentmanagement.cli;
 
 import bg.sofia.uni.fmi.cleancode.studentmanagement.io.AppIO;
 import bg.sofia.uni.fmi.cleancode.studentmanagement.course.Course;
-import bg.sofia.uni.fmi.cleancode.studentmanagement.school.School;
-import bg.sofia.uni.fmi.cleancode.studentmanagement.student.Student;
-import bg.sofia.uni.fmi.cleancode.studentmanagement.teacher.Degree;
-import bg.sofia.uni.fmi.cleancode.studentmanagement.teacher.Teacher;
+import bg.sofia.uni.fmi.cleancode.studentmanagement.entities.School;
+import bg.sofia.uni.fmi.cleancode.studentmanagement.entities.Student;
+import bg.sofia.uni.fmi.cleancode.studentmanagement.enums.Degree;
+import bg.sofia.uni.fmi.cleancode.studentmanagement.entities.Teacher;
 
 public class SchoolManagementCLI {
     private static final String WRONG_FORMAT_ERROR_MESSAGE = "Wrong format! Try again.";

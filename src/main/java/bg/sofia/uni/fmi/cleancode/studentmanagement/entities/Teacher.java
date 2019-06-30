@@ -1,4 +1,6 @@
-package bg.sofia.uni.fmi.cleancode.studentmanagement.teacher;
+package bg.sofia.uni.fmi.cleancode.studentmanagement.entities;
+
+import bg.sofia.uni.fmi.cleancode.studentmanagement.enums.Degree;
 
 public class Teacher {
     public Teacher(String name, Degree degree) {

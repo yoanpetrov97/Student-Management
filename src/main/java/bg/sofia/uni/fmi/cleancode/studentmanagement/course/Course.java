@@ -1,7 +1,7 @@
 package bg.sofia.uni.fmi.cleancode.studentmanagement.course;
 
-import bg.sofia.uni.fmi.cleancode.studentmanagement.student.Student;
-import bg.sofia.uni.fmi.cleancode.studentmanagement.teacher.Teacher;
+import bg.sofia.uni.fmi.cleancode.studentmanagement.entities.Student;
+import bg.sofia.uni.fmi.cleancode.studentmanagement.entities.Teacher;
 
 import java.util.*;
 import java.util.stream.Collectors;

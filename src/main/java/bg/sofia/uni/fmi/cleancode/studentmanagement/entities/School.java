@@ -1,8 +1,6 @@
-package bg.sofia.uni.fmi.cleancode.studentmanagement.school;
+package bg.sofia.uni.fmi.cleancode.studentmanagement.entities;
 
 import bg.sofia.uni.fmi.cleancode.studentmanagement.course.Course;
-import bg.sofia.uni.fmi.cleancode.studentmanagement.student.Student;
-import bg.sofia.uni.fmi.cleancode.studentmanagement.teacher.Teacher;
 
 import java.util.*;
 
