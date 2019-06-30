@@ -1,6 +1,10 @@
 package bg.sofia.uni.fmi.cleancode.studentmanagement.entities;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class School {
     private Map<String, Teacher> teachers;

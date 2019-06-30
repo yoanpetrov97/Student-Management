@@ -66,6 +66,8 @@ public class SchoolManagementCLI {
 
             currentLine = AppIO.getSystemScanner().nextLine();
         }
+
+        AppIO.closeScanner();
     }
 
     private void printAvailableOptions() {
