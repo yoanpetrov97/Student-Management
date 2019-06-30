@@ -1,13 +1,11 @@
 package bg.sofia.uni.fmi.cleancode.studentmanagement.cli;
 
 import bg.sofia.uni.fmi.cleancode.studentmanagement.AppIO;
+import bg.sofia.uni.fmi.cleancode.studentmanagement.course.Course;
 import bg.sofia.uni.fmi.cleancode.studentmanagement.school.School;
 import bg.sofia.uni.fmi.cleancode.studentmanagement.student.Student;
-import bg.sofia.uni.fmi.cleancode.studentmanagement.course.Course;
 import bg.sofia.uni.fmi.cleancode.studentmanagement.teacher.Degree;
 import bg.sofia.uni.fmi.cleancode.studentmanagement.teacher.Teacher;
-
-import java.util.Scanner;
 
 public class SchoolManagement {
     private static final String WRONG_FORMAT_ERROR_MESSAGE = "Wrong format! Try again.";
