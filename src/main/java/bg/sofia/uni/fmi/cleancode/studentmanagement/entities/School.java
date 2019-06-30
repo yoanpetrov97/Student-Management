@@ -1,7 +1,5 @@
 package bg.sofia.uni.fmi.cleancode.studentmanagement.entities;
 
-import bg.sofia.uni.fmi.cleancode.studentmanagement.course.Course;
-
 import java.util.*;
 
 public class School {

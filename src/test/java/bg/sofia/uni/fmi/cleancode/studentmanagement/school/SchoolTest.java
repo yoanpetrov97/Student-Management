@@ -1,6 +1,6 @@
 package bg.sofia.uni.fmi.cleancode.studentmanagement.school;
 
-import bg.sofia.uni.fmi.cleancode.studentmanagement.course.Course;
+import bg.sofia.uni.fmi.cleancode.studentmanagement.entities.Course;
 import bg.sofia.uni.fmi.cleancode.studentmanagement.entities.School;
 import bg.sofia.uni.fmi.cleancode.studentmanagement.entities.Student;
 import bg.sofia.uni.fmi.cleancode.studentmanagement.enums.Degree;
