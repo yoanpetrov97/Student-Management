@@ -16,7 +16,7 @@ public class SchoolManagement {
 
         String currentLine = AppIO.getSystemScanner().nextLine();
 
-        while (!"q".equalsIgnoreCase(currentLine)) {
+        while (!"q".equalsIgnoreCase(currentLine.trim()) && !"exit".equalsIgnoreCase(currentLine.trim())) {
             switch (currentLine.trim()) {
                 case "1":
                     addNewCourse();
