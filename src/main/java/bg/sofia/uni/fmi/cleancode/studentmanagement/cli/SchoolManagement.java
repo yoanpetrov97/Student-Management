@@ -1,5 +1,6 @@
 package bg.sofia.uni.fmi.cleancode.studentmanagement.cli;
 
+import bg.sofia.uni.fmi.cleancode.studentmanagement.AppIO;
 import bg.sofia.uni.fmi.cleancode.studentmanagement.school.School;
 import bg.sofia.uni.fmi.cleancode.studentmanagement.student.Student;
 import bg.sofia.uni.fmi.cleancode.studentmanagement.course.Course;
@@ -11,15 +12,14 @@ import java.util.Scanner;
 public class SchoolManagement {
     private static final String WRONG_FORMAT_ERROR_MESSAGE = "Wrong format! Try again.";
     private static School school = new School();
-    private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
         printAvailableOptions();
 
-        String currentLine = scanner.nextLine();
+        String currentLine = AppIO.getSystemScanner().nextLine();
 
         while (!"q".equalsIgnoreCase(currentLine)) {
-            switch (currentLine) {
+            switch (currentLine.trim()) {
                 case "1":
                     addNewCourse();
                     break;
@@ -56,7 +56,7 @@ public class SchoolManagement {
 
             printAvailableOptions();
 
-            currentLine = scanner.nextLine();
+            currentLine = AppIO.getSystemScanner().nextLine();
         }
     }
 
@@ -79,11 +79,11 @@ public class SchoolManagement {
         System.out.println("Enter the name of the course you want to add:");
 
         try {
-            final String name = scanner.nextLine();
+            final String name = AppIO.getSystemScanner().nextLine();
 
             System.out.println("Enter the total hours of the course you want to add:");
 
-            final int totalHours = Integer.parseInt(scanner.nextLine());
+            final int totalHours = Integer.parseInt(AppIO.getSystemScanner().nextLine());
 
             school.addCourse(new Course(name, totalHours));
         } catch (Exception e) {
@@ -95,11 +95,11 @@ public class SchoolManagement {
         System.out.println("Enter the name of the student you want to add:");
 
         try {
-            final String name = scanner.nextLine();
+            final String name = AppIO.getSystemScanner().nextLine();
 
             System.out.println("Enter the age of the student you want to add:");
 
-            final int age = Integer.parseInt(scanner.nextLine());
+            final int age = Integer.parseInt(AppIO.getSystemScanner().nextLine());
 
             school.addStudent(new Student(name, age));
         } catch (NumberFormatException e) {
@@ -110,7 +110,7 @@ public class SchoolManagement {
     private static void addNewTeacher() {
         System.out.println("Enter the name of the teacher you want to add:");
 
-        final String name = scanner.nextLine();
+        final String name = AppIO.getSystemScanner().nextLine();
 
         getTeachersDegree(name);
     }
@@ -122,7 +122,7 @@ public class SchoolManagement {
                 "2 - BSc\n" +
                 "3 - PhD");
 
-        final String degree = scanner.nextLine();
+        final String degree = AppIO.getSystemScanner().nextLine();
 
         Degree teacherDegree = null;
 
@@ -152,11 +152,11 @@ public class SchoolManagement {
     private static void addTeacherToCourse() {
         System.out.println("Enter the teacher's name:");
 
-        final String teacherName = scanner.nextLine();
+        final String teacherName = AppIO.getSystemScanner().nextLine();
 
         System.out.println("Enter the name of the course:");
 
-        final String courseName = scanner.nextLine();
+        final String courseName = AppIO.getSystemScanner().nextLine();
 
         if (school.getTeachers().get(teacherName) == null) {
             System.out.printf("The teacher %s isn't added to the school.\n", teacherName);
@@ -174,11 +174,11 @@ public class SchoolManagement {
     private static void addStudentToCourse() {
         System.out.println("Enter the student's name:");
 
-        final String studentName = scanner.nextLine();
+        final String studentName = AppIO.getSystemScanner().nextLine();
 
         System.out.println("Enter the name of the course:");
 
-        final String courseName = scanner.nextLine();
+        final String courseName = AppIO.getSystemScanner().nextLine();
 
         if (school.getStudents().get(studentName) == null) {
             System.out.printf("The student %s isn't added to the school.\n", studentName);
@@ -198,15 +198,15 @@ public class SchoolManagement {
         System.out.println("Enter the student's name:");
 
         try {
-            final String studentName = scanner.nextLine();
+            final String studentName = AppIO.getSystemScanner().nextLine();
 
             System.out.println("Enter the name of the course:");
 
-            final String courseName = scanner.nextLine();
+            final String courseName = AppIO.getSystemScanner().nextLine();
 
             System.out.printf("Enter %s's grade in the course %s:\n", studentName, courseName);
 
-            final double grade = Double.parseDouble(scanner.nextLine());
+            final double grade = Double.parseDouble(AppIO.getSystemScanner().nextLine());
 
 
             if (school.getStudents().get(studentName) == null) {
@@ -234,7 +234,7 @@ public class SchoolManagement {
     private static void showAverageGradeForAllStudentsInCourse() {
         System.out.println("Enter the name of the course:");
 
-        final String courseName = scanner.nextLine();
+        final String courseName = AppIO.getSystemScanner().nextLine();
 
         if (school.getCourses().get(courseName) == null) {
             System.out.printf("The course %s isn't added to the school.\n", courseName);
@@ -246,7 +246,7 @@ public class SchoolManagement {
     private static void showAverageGradeForAllCourses() {
         System.out.println("Enter the student's name:");
 
-        final String studentName = scanner.nextLine();
+        final String studentName = AppIO.getSystemScanner().nextLine();
 
         if (school.getStudents().get(studentName) == null) {
             System.out.printf("The student %s isn't added to the school.\n", studentName);
