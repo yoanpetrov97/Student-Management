@@ -1,4 +1,4 @@
-package bg.sofia.uni.fmi.cleancode.studentmanagement;
+package bg.sofia.uni.fmi.cleancode.studentmanagement.io;
 
 import java.util.Scanner;
 

@@ -1,17 +1,27 @@
 package bg.sofia.uni.fmi.cleancode.studentmanagement.cli;
 
-import bg.sofia.uni.fmi.cleancode.studentmanagement.AppIO;
+import bg.sofia.uni.fmi.cleancode.studentmanagement.io.AppIO;
 import bg.sofia.uni.fmi.cleancode.studentmanagement.course.Course;
 import bg.sofia.uni.fmi.cleancode.studentmanagement.school.School;
 import bg.sofia.uni.fmi.cleancode.studentmanagement.student.Student;
 import bg.sofia.uni.fmi.cleancode.studentmanagement.teacher.Degree;
 import bg.sofia.uni.fmi.cleancode.studentmanagement.teacher.Teacher;
 
-public class SchoolManagement {
+public class SchoolManagementCLI {
     private static final String WRONG_FORMAT_ERROR_MESSAGE = "Wrong format! Try again.";
-    private static School school = new School();
+    private School school = new School();
 
-    public static void main(String[] args) {
+    private static SchoolManagementCLI instance;
+
+    static {
+        instance = new SchoolManagementCLI();
+    }
+
+    public static SchoolManagementCLI getInstance() {
+        return instance;
+    }
+
+    public void run() {
         printAvailableOptions();
 
         String currentLine = AppIO.getSystemScanner().nextLine();
@@ -58,7 +68,7 @@ public class SchoolManagement {
         }
     }
 
-    private static void printAvailableOptions() {
+    private void printAvailableOptions() {
         System.out.println("q - exit\n" +
                 "1 - Add a new course\n" +
                 "2 - Add a new student\n" +
@@ -73,7 +83,7 @@ public class SchoolManagement {
                 "10 - Show a total average grade for student (between all of his courses)\n");
     }
 
-    private static void addNewCourse() {
+    private void addNewCourse() {
         System.out.println("Enter the name of the course you want to add:");
 
         try {
@@ -89,7 +99,7 @@ public class SchoolManagement {
         }
     }
 
-    private static void addNewStudent() {
+    private void addNewStudent() {
         System.out.println("Enter the name of the student you want to add:");
 
         try {
@@ -105,7 +115,7 @@ public class SchoolManagement {
         }
     }
 
-    private static void addNewTeacher() {
+    private void addNewTeacher() {
         System.out.println("Enter the name of the teacher you want to add:");
 
         final String name = AppIO.getSystemScanner().nextLine();
@@ -113,7 +123,7 @@ public class SchoolManagement {
         getTeachersDegree(name);
     }
 
-    private static void getTeachersDegree(String name) {
+    private void getTeachersDegree(String name) {
 
         System.out.println("Enter the teacher's degree:\n" +
                 "1 - MSc\n" +
@@ -147,7 +157,7 @@ public class SchoolManagement {
 
     }
 
-    private static void addTeacherToCourse() {
+    private void addTeacherToCourse() {
         System.out.println("Enter the teacher's name:");
 
         final String teacherName = AppIO.getSystemScanner().nextLine();
@@ -169,7 +179,7 @@ public class SchoolManagement {
         }
     }
 
-    private static void addStudentToCourse() {
+    private void addStudentToCourse() {
         System.out.println("Enter the student's name:");
 
         final String studentName = AppIO.getSystemScanner().nextLine();
@@ -192,7 +202,7 @@ public class SchoolManagement {
     }
 
 
-    private static void addGradeForStudentInCourse() {
+    private void addGradeForStudentInCourse() {
         System.out.println("Enter the student's name:");
 
         try {
@@ -229,7 +239,7 @@ public class SchoolManagement {
         }
     }
 
-    private static void showAverageGradeForAllStudentsInCourse() {
+    private void showAverageGradeForAllStudentsInCourse() {
         System.out.println("Enter the name of the course:");
 
         final String courseName = AppIO.getSystemScanner().nextLine();
@@ -241,7 +251,7 @@ public class SchoolManagement {
         }
     }
 
-    private static void showAverageGradeForAllCourses() {
+    private void showAverageGradeForAllCourses() {
         System.out.println("Enter the student's name:");
 
         final String studentName = AppIO.getSystemScanner().nextLine();
