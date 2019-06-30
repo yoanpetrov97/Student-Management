@@ -20,34 +20,34 @@ public class SchoolManagement {
 
         while (!"q".equalsIgnoreCase(currentLine)) {
             switch (currentLine) {
-                case "0":
+                case "1":
                     addNewCourse();
                     break;
-                case "1":
+                case "2":
                     addNewStudent();
                     break;
-                case "2":
+                case "3":
                     addNewTeacher();
                     break;
-                case "3":
+                case "4":
                     addTeacherToCourse();
                     break;
-                case "4":
+                case "5":
                     addStudentToCourse();
                     break;
-                case "5":
+                case "6":
                     addGradeForStudentInCourse();
                     break;
-                case "6":
+                case "7":
                     school.showAllStudents();
                     break;
-                case "7":
+                case "8":
                     school.showAllCoursesAndTheirTeachersAndStudents();
                     break;
-                case "8":
+                case "9":
                     showAverageGradeForAllStudentsInCourse();
                     break;
-                case "9":
+                case "10":
                     showAverageGradeForAllCourses();
                     break;
                 default:
@@ -62,17 +62,17 @@ public class SchoolManagement {
 
     private static void printAvailableOptions() {
         System.out.println("q - exit\n" +
-                "0 - Add a new course\n" +
-                "1 - Add a new student\n" +
-                "2 - Add a new teacher\n" +
-                "3 - Add a teacher to a specific course (max 1)\n" +
-                "4 - Add a student to a specific course\n" +
-                "5 - Add a grade for student in a specific course (grade 2.0-6.0)\n" +
-                "6 - Show all students grouped by course (alphabetically) and then by their " +
+                "1 - Add a new course\n" +
+                "2 - Add a new student\n" +
+                "3 - Add a new teacher\n" +
+                "4 - Add a teacher to a specific course (max 1)\n" +
+                "5 - Add a student to a specific course\n" +
+                "6 - Add a grade for student in a specific course (grade 2.0-6.0)\n" +
+                "7 - Show all students grouped by course (alphabetically) and then by their " +
                 "average grade for the course (ascending)\n" +
-                "7 - Show all courses and their teachers and students (without grades)\n" +
-                "8 - Show the average grade for all students in a specific course\n" +
-                "9 - Show a total average grade for student (between all of his courses)\n");
+                "8 - Show all courses and their teachers and students (without grades)\n" +
+                "9 - Show the average grade for all students in a specific course\n" +
+                "10 - Show a total average grade for student (between all of his courses)\n");
     }
 
     private static void addNewCourse() {
@@ -206,7 +206,7 @@ public class SchoolManagement {
 
             System.out.printf("Enter %s's grade in the course %s:\n", studentName, courseName);
 
-            final double grade = Integer.parseInt(scanner.nextLine());
+            final double grade = Double.parseDouble(scanner.nextLine());
 
 
             if (school.getStudents().get(studentName) == null) {

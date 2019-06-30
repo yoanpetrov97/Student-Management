@@ -4,8 +4,9 @@ import bz.sty.internship.course.Course;
 import bz.sty.internship.student.Student;
 import bz.sty.internship.teacher.Degree;
 import bz.sty.internship.teacher.Teacher;
-import org.testng.Assert;
-import org.testng.annotations.Test;
+import org.junit.Assert;
+import org.junit.Test;
+
 
 public class SchoolTest {
     @Test
@@ -131,21 +132,5 @@ public class SchoolTest {
             Assert.assertEquals(school.getCourses().get(exampleCourse.getName())
                     .getAllGradesOfStudent(exampleStudent).get(i), exampleGrades[i], 0.0001);
         }
-    }
-
-    @Test
-    public void testShowAllStudents() {
-    }
-
-    @Test
-    public void testShowAllCoursesAndTheirTeachersAndStudents() {
-    }
-
-    @Test
-    public void testShowAverageGradeForAllStudentsInCourse() {
-    }
-
-    @Test
-    public void testShowAverageGradeForAllCourses() {
     }
 }
