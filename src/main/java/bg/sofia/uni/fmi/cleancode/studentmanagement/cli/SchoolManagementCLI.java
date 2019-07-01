@@ -1,6 +1,6 @@
 package bg.sofia.uni.fmi.cleancode.studentmanagement.cli;
 
-import bg.sofia.uni.fmi.cleancode.studentmanagement.io.AppIO;
+import bg.sofia.uni.fmi.cleancode.studentmanagement.cli.io.AppIO;
 import bg.sofia.uni.fmi.cleancode.studentmanagement.entities.Course;
 import bg.sofia.uni.fmi.cleancode.studentmanagement.entities.School;
 import bg.sofia.uni.fmi.cleancode.studentmanagement.entities.Student;
