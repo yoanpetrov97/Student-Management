@@ -72,11 +72,13 @@ public class SchoolManagementCLI {
     }
 
     public void run() {
+
         printAvailableOptions();
 
         String currentLine = AppIO.getSystemScanner().nextLine();
 
         while (!"q".equalsIgnoreCase(currentLine.trim()) && !"exit".equalsIgnoreCase(currentLine.trim())) {
+
             switch (currentLine.trim()) {
                 case "1":
                     addNewCourse();
@@ -125,6 +127,7 @@ public class SchoolManagementCLI {
     }
 
     private void addNewCourse() {
+
         System.out.println(ADD_COURSE_NAME_MESSAGE);
 
         try {
@@ -141,6 +144,7 @@ public class SchoolManagementCLI {
     }
 
     private void addNewStudent() {
+
         System.out.println(ADD_STUDENT_NAME_MESSAGE);
 
         try {
@@ -157,6 +161,7 @@ public class SchoolManagementCLI {
     }
 
     private void addNewTeacher() {
+
         System.out.println(ADD_TEACHER_NAME_MESSAGE);
 
         final String name = AppIO.getSystemScanner().nextLine();
@@ -195,6 +200,7 @@ public class SchoolManagementCLI {
     }
 
     private void addTeacherToCourse() {
+
         System.out.println(TEACHER_NAME_MESSAGE);
 
         final String teacherName = AppIO.getSystemScanner().nextLine();
@@ -217,6 +223,7 @@ public class SchoolManagementCLI {
     }
 
     private void addStudentToCourse() {
+
         System.out.println(STUDENT_NAME_MESSAGE);
 
         final String studentName = AppIO.getSystemScanner().nextLine();
@@ -240,6 +247,7 @@ public class SchoolManagementCLI {
 
 
     private void addGradeForStudentInCourse() {
+
         System.out.println(STUDENT_NAME_MESSAGE);
 
         try {
@@ -277,6 +285,7 @@ public class SchoolManagementCLI {
     }
 
     private void showAverageGradeForAllStudentsInCourse() {
+
         System.out.println(COURSE_NAME_MESSAGE);
 
         final String courseName = AppIO.getSystemScanner().nextLine();
@@ -289,6 +298,7 @@ public class SchoolManagementCLI {
     }
 
     private void showAverageGradeForAllCourses() {
+
         System.out.println(STUDENT_NAME_MESSAGE);
 
         final String studentName = AppIO.getSystemScanner().nextLine();
