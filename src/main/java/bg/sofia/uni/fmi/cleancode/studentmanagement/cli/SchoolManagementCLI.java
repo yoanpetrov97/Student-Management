@@ -8,13 +8,18 @@ import bg.sofia.uni.fmi.cleancode.studentmanagement.enums.Degree;
 import bg.sofia.uni.fmi.cleancode.studentmanagement.entities.Teacher;
 
 public class SchoolManagementCLI {
-    private static final String WRONG_FORMAT_ERROR_MESSAGE = "Wrong format! Try again.";
-    private School school = new School();
+    private static final String WRONG_FORMAT_ERROR_MESSAGE;
+    private School school;
 
     private static SchoolManagementCLI instance;
 
     static {
+        WRONG_FORMAT_ERROR_MESSAGE = "Wrong format! Try again.";
         instance = new SchoolManagementCLI();
+    }
+
+    private SchoolManagementCLI() {
+        school = new School();
     }
 
     public static SchoolManagementCLI getInstance() {
