@@ -1,6 +1,5 @@
-package bg.sofia.uni.fmi.cleancode.studentmanagement;
+package bg.sofia.uni.fmi.cleancode.studentmanagement.commands;
 
-import bg.sofia.uni.fmi.cleancode.studentmanagement.commands.Command;
 import bg.sofia.uni.fmi.cleancode.studentmanagement.entities.School;
 
 public class ShowAllCoursesAndTheirTeachersAndStudentsCommand implements Command {
