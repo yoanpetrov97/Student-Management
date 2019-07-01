@@ -188,7 +188,6 @@ public class SchoolManagementCLI {
             default:
                 System.out.println(WRONG_FORMAT_ERROR_MESSAGE);
                 System.out.println(WRONG_DEGREE_MESSAGE);
-
         }
 
         school.addTeacher(new Teacher(name, teacherDegree));
