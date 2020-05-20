@@ -8,6 +8,9 @@ public class AppIO {
     static {
         scanner = new Scanner(System.in);
     }
+    
+    private AppIO() {
+    }
 
     public static Scanner getSystemScanner() {
         return scanner;
